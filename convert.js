@@ -8,7 +8,7 @@ function stringToNumber(str) {
 
   if (typeof num === 'bigint') {
     return num.toLocaleString('en-US');
-  } else (typeof num === 'number') {
+  } else if (typeof num === 'number') {
     return num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 20 });
   }
 }
