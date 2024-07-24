@@ -3,7 +3,12 @@ function numToStr(num) {
 }
 
 function stringToNumber(str) {
+  
   let num = Number(str); 
 
-  return num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 20 });
+  if (typeof num === 'bigint') {
+    return return num.toLocaleString('en-US');
+  } else (typeof num === 'number') {
+    return num.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 20 });
+  }
 }
